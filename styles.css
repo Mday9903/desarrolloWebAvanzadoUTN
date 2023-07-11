@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+    height: 47.5vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar{
+    position: absolute;
+    background-color: #181D31;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 25px;
+
+}
+
+.logo-header{
+    color: white;
+    /* ACA VA EL SVG DEL LOGO*/
+}
+.menu-header{
+    list-style: none;
+    display: flex;
+    margin: 1.3rem 5rem;
+    justify-content:center;
+    gap: 3rem;
+}
+
+.menu-header>li{
+    background-color: #E6DDC4;
+    width: auto;
+    height: 2.5rem;
+    border-radius: 10px;
+    padding: 0.7rem;
+    box-shadow: 2px 2px #678983;
+}
+.menu-header>li>a{
+    text-decoration: none;
+    color: #181D31;
+}
+.titulo-flotante{
+    color: #EEEEEE;
+    position: absolute;
+    display: flex;
+    align-self: center;  
+    font-size: 3.5rem;
+    text-shadow: 2px 2px grey,6px 6px black;
+    text-align: center;
+    
+}
+.portada{
+    width: 100%;
+}
+main{
+    background-color: #181D31;
+}
+.titulo-h2{
+    font-size: 2.5rem;
+    text-align: center;
+    color: #678983;
+}
+.section-tarjetas{
+    display: flex;
+    justify-content: space-around;
+    padding: 13rem 0rem;
+}
+.tarjeta{
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background-color: #E6DDC4;
+    border: 5px solid #678983;
+    text-align: center;
+}
+.img-tarjeta{
+    width: 100%;
+}
+.cont-tarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.texto-cont-tarjeta{
+    max-height:90px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;    
+}
+
+.btn-cont-tarjeta{
+    position:absolute;
+    text-decoration: none;
+    width: 50%;
+    padding: 10px 40px;
+    color: white;
+    background-color: #181D31;
+    border-radius: 10px;
+    box-shadow: 2px 3px #678983;
+    bottom: 20px;
+}
+.boton:active{
+    transform: translate(2px,3px);
+    box-shadow: 0px 0px darkgray;
+}
+
+.footer{
+    height: 15vh;
+    background-color: #678983;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0px 40px;
+}
+.footer-izq{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.logo-footer{
+    height:80px ;
+}
+.titulo-footer{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 6px 0px;
+}
+
+/* ------------------- Pagina historia ------------------- */
+
+.section-historia{
+    display: grid;
+    gap: 50px;
+    padding: 150px 80px;
+    grid-template-columns: 1.05fr 1.45fr 0.3fr 1fr 1fr;
+    grid-template-areas: "h2-1 h2-1 p1 p1 p1"
+                         " p2 p2 p2 h2-2 h2-2"
+                         " h2-3 p3 p3 p3 p3";
+    grid-template-rows: repeat(3,1fr);
+
+}
+.cont-p-historia>p{
+    font-size: 1rem;
+    color: white;
+}
+#titulo-h2-1{
+    grid-area: h2-1;
+    padding-top: 5px;
+    /* padding-right: 120px; */
+    padding-right: 9rem;
+}
+#cont-p-historia-1{
+    grid-area: p1;
+    /* padding-right: 60px; */
+    padding-right: 5rem;
+}
+#cont-p-historia-2{
+    grid-area: p2;
+    /* padding-left: 200px; */
+    padding-left: 12.5rem;
+    /* padding-right: 100px; */
+    padding-right: 6.25rem;
+}
+#titulo-h2-2{
+    grid-area: h2-2;
+    padding-top: 20px;
+    /* padding-left: 170px; */
+    padding-left: 12rem;
+}
+#titulo-h2-3{
+    grid-area: h2-3;
+    padding-top: 40px;
+}
+#cont-p-historia-3{
+    grid-area: p3;
+}
+
+.section-video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+.section-video>video{
+    width: 70%;
+}
+.cont-video{
+    width: 70%;
+    padding-bottom: 5px;
+    background-color: black;
+}
+.cont-video>video{
+    width: 100%;
+}
+.panel-video{
+    margin: 0px 5px;
+    padding: 2px 5px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    background-color: #1d1d1d;
+    border-radius: 10px;
+}
+.cont-botones-video{
+    display: flex;
+    gap: 20px;
+}
+.btn-video{
+    width: 80px;
+    padding:10px;
+    background-color: #E6DDC4;
+    color: #181D31;
+    border-radius: 10px;
+    box-shadow: 2px 3px #678983;
+}
+.cont-tiempo-video{
+    display: flex;
+    align-items: flex-end;
+
+}
+
+
+@media (max-width:1200px){
+    .navbar{
+        gap: 50%;
+    }
+    #titulo-h2-2{
+        padding-left: 0px;
+    }
+}
+@media (max-width:850px){
+    .menu-header{
+        margin: 1.3rem 5rem 1.3rem 2rem;
+    }
+    .section-tarjetas{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 4rem 0rem;
+    }
+    .footer{
+        flex-direction: column;
+        padding: 30px 40px;
+    }
+    .section-historia{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    #titulo-h2-1,#titulo-h2-2,#titulo-h2-3,#cont-p-historia-1,#cont-p-historia-2,#cont-p-historia-3{
+        padding: 0px;
+    }
+
+}
+@media (max-width:600px){
+    .navbar{
+        display: inline-block;
+    }
+    .menu-header{
+        margin: 1.3rem 0;
+        width: auto;
+    }
+    .titulo-flotante{
+         font-size: 2rem;
+    }
+    .panel-video{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+}
+@media(max-width:340px){
+    .tarjeta{
+        width: auto;
+    }
+    .section-historia>.titulo-h2{
+        font-size: 2rem;
+    }
+}
