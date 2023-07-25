@@ -11,15 +11,25 @@
     <header>
         <nav id="navbar" class="navbar">
             <a href="./index.html" class="logo-header">
-                Logo
+                <svg>
+                    <rect class="recuadro-logo-pc" x="25" y="2" width="70px" height="40px" fill="#F0E9D2" rx="4"></rect>
+                    <rect class="interior-logo-pc" x="31" y="7" width="58px" height="30px" fill="#495579" rx="5"></rect>
+                    <polygon class="recuadro-logo-pc" points="5 70, 115 70,85 50,35 50" fill="#F0E9D2"></polygon>
+                    <polygon class="interior-logo-pc" points="20 66, 100 66,82 54,37 54" fill="#495579"></polygon>
+                </svg>
             </a>
             <ul class="menu-header">
                 <li class="boton"><a href="./historia.html">HISTORIA</a></li>
-                <li class="boton"><a href="#">JUGUEMOS</a></li>
+                <li class="boton"><a href="./juguemos.html">JUGUEMOS</a></li>
             </ul>
         </nav>
-        <h1 class="titulo-flotante">HISTORIA DE LA PROGRAMACION</h1>
-        <img id="portada" class="portada" src="./assets/imagenes/codigo.jpg" alt="Una imagen con código de programación de fondo">
+        <div class="portada">
+            <h1 class="titulo-flotante-portada">PROGRAMACION E HISTORIA</h1>
+            <img class="portada-img" src="./assets/imagenes/codigo.jpg" srcset="
+            ./assets/imagenes/codigo-chica.jpg 600w,
+            ./assets/imagenes/codigo.jpg "
+             alt="Una imagen con código de programación de fondo">
+        </div>
     </header>
     <main>
         <section class="section-historia">

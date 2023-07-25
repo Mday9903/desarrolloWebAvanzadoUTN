@@ -5,27 +5,38 @@
     font-family: 'Montserrat', sans-serif;
 }
 header{
-    height: 47.5vh;
-    overflow: hidden;
     position: relative;
-    display: flex;
+    height: auto;
     justify-content: center;
+    overflow: hidden;
 }
 
 .navbar{
-    position: absolute;
+    /* position:relative; */
     background-color: #181D31;
     width: 100%;
+    height: auto;
     color: white;
     display: flex;
     justify-content: space-between;
     padding: 0px 25px;
+    z-index: 1;
 
 }
 
 .logo-header{
     color: white;
-    /* ACA VA EL SVG DEL LOGO*/
+    width:120px;
+    height:80px;
+    padding: 5px;
+    box-sizing: content-box;
+}
+.recuadro-logo-pc{
+    animation: efectoLogo 1.5s  ;
+}
+.interior-logo-pc{
+    animation: efectoLogo 1s 0.5s  backwards ;
+
 }
 .menu-header{
     list-style: none;
@@ -47,18 +58,28 @@ header{
     text-decoration: none;
     color: #181D31;
 }
-.titulo-flotante{
+.portada{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.titulo-flotante-portada{
     color: #EEEEEE;
     position: absolute;
-    display: flex;
-    align-self: center;  
     font-size: 3.5rem;
     text-shadow: 2px 2px grey,6px 6px black;
+    z-index: 1;
     text-align: center;
     
 }
-.portada{
+.portada-img{
     width: 100%;
+    height: 100%;
+    transform: scale(1.5);
 }
 main{
     background-color: #181D31;
@@ -149,7 +170,9 @@ main{
                          " h2-3 p3 p3 p3 p3";
     grid-template-rows: repeat(3,1fr);
 
-}
+}.menu-header{
+        margin: 1.3rem 5rem 1.3rem 2rem;
+    }
 .cont-p-historia>p{
     font-size: 1rem;
     color: white;
@@ -230,7 +253,69 @@ main{
     align-items: flex-end;
 
 }
+/* ------------------- Pagina juguemos ------------------- */
 
+.main-juguemos{
+    padding-top: 100px;
+}
+
+.cont-cajas{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    box-sizing: content-box;
+    color: #E6DDC4;
+}
+.caja{
+    height: 100%;
+    background-color: gray;
+    max-width: 300px;
+    min-width: 250px;
+    width: 23%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.caja:hover{
+    background-color: #1d1d1d;
+}
+.caja-p{
+    color: #E6DDC4;
+    text-align: center;
+    padding: 0 5px;
+}
+.cont-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+#boton-reiniciar{
+    width: 250px;
+}
+
+
+
+
+/* ------------------- keyframes------------------- */
+
+@keyframes efectoLogo{
+    from{
+        transform: translateY(-20px) ;
+
+        opacity: 0;
+    }
+    to{
+        transform: translate(0);
+        opacity: 100;
+    }
+}
+
+
+/* ------------------- media ------------------- */
 
 @media (max-width:1200px){
     .navbar{
@@ -240,9 +325,15 @@ main{
         padding-left: 0px;
     }
 }
-@media (max-width:850px){
+@media (max-width:920px){
+    .navbar{
+        gap: 20%;
+    }
     .menu-header{
         margin: 1.3rem 5rem 1.3rem 2rem;
+    }
+    .titulo-flotante-portada{
+        font-size: 2.5rem;
     }
     .section-tarjetas{
         flex-direction: column;
@@ -263,17 +354,28 @@ main{
     #titulo-h2-1,#titulo-h2-2,#titulo-h2-3,#cont-p-historia-1,#cont-p-historia-2,#cont-p-historia-3{
         padding: 0px;
     }
+    .main-juguemos{
+        padding-top: 20px;
+    }
+    .cont-cajas{
+        height: 300px;
+    }
+    .caja{
+        min-width: 100px;
+        width: 30%;
+    }
 
 }
 @media (max-width:600px){
     .navbar{
-        display: inline-block;
+        flex-direction: column;
+        align-items: center;
     }
     .menu-header{
-        margin: 1.3rem 0;
+        margin: 1rem 0;
         width: auto;
     }
-    .titulo-flotante{
+    .titulo-flotante-portada{
          font-size: 2rem;
     }
     .panel-video{
@@ -281,13 +383,43 @@ main{
         align-items: center;
         gap: 20px;
     }
-
+    .main-juguemos{
+        padding-top: 20px;
+    }
+    .cont-cajas{
+        height: 200px;
+    }
+    #boton-reiniciar{
+        margin-top: 5px;
+        width: 150px;
+    }
 }
 @media(max-width:340px){
+    .titulo-flotante-portada{
+        font-size: 1.5rem;
+      
+   }
+    .titulo-h2{
+        font-size: 1.5rem;
+    }
     .tarjeta{
         width: auto;
     }
     .section-historia>.titulo-h2{
         font-size: 2rem;
     }
+    .main-juguemos{
+        padding-top: 20px;
+    }
+    .cont-cajas{
+        height: 150px;
+        padding-bottom: 10px;
+    }
+    #boton-reiniciar{
+        margin-top: 5px;
+        width: 100px;
+        
+    }
 }
+
+
