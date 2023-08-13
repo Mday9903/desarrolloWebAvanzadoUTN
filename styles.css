@@ -10,9 +10,13 @@ header{
     justify-content: center;
     overflow: hidden;
 }
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .navbar{
-    /* position:relative; */
     background-color: #181D31;
     width: 100%;
     height: auto;
@@ -21,7 +25,6 @@ header{
     justify-content: space-between;
     padding: 0px 25px;
     z-index: 1;
-
 }
 
 .logo-header{
@@ -105,11 +108,6 @@ main{
 .img-tarjeta{
     width: 100%;
 }
-.cont-tarjeta{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .texto-cont-tarjeta{
     max-height:90px;
     margin-top: 30px;
@@ -180,25 +178,20 @@ main{
 #titulo-h2-1{
     grid-area: h2-1;
     padding-top: 5px;
-    /* padding-right: 120px; */
     padding-right: 9rem;
 }
 #cont-p-historia-1{
     grid-area: p1;
-    /* padding-right: 60px; */
     padding-right: 5rem;
 }
 #cont-p-historia-2{
     grid-area: p2;
-    /* padding-left: 200px; */
     padding-left: 12.5rem;
-    /* padding-right: 100px; */
     padding-right: 6.25rem;
 }
 #titulo-h2-2{
     grid-area: h2-2;
     padding-top: 20px;
-    /* padding-left: 170px; */
     padding-left: 12rem;
 }
 #titulo-h2-3{
@@ -210,9 +203,6 @@ main{
 }
 
 .section-video{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-bottom: 100px;
     padding-top: 50px;
 }
@@ -255,31 +245,54 @@ main{
 }
 /* ------------------- Pagina juguemos ------------------- */
 
-.main-juguemos{
-    padding-top: 100px;
-}
-
 .cont-cajas{
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "caja1 caja2 caja3"
+                "imagen1 imagen2 imagen3";
+    color: #E6DDC4;
+    gap: 10px;
+    row-gap: 20px;
     padding-top: 10px;
     padding-bottom: 50px;
-    box-sizing: content-box;
-    color: #E6DDC4;
+}
+.cont-cajas>img,.caja{
+    height: 400px;
+    width:275px;
 }
 .caja{
-    height: 100%;
     background-color: gray;
-    max-width: 300px;
     min-width: 250px;
-    width: 23%;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
-.caja:hover{
+#caja1{
+    grid-area: caja1;
+}
+#caja2{
+    grid-area: caja2;
+}
+#caja3{
+    grid-area: caja3;
+}
+#imagen1{
+    grid-area: imagen1;
+}
+#imagen2{
+    grid-area: imagen2;
+}
+#imagen3{
+    grid-area: imagen3;
+}
+
+.caja>img{
+    height: 400px;
+    width: 100%;
+}
+.caja:hover, .iluminado{
     background-color: #1d1d1d;
 }
 .caja-p{
@@ -355,14 +368,21 @@ main{
         padding: 0px;
     }
     .main-juguemos{
-        padding-top: 20px;
+        align-items: normal;
+        padding: 20px 40px;
     }
     .cont-cajas{
-        height: 300px;
+        column-gap: 10px;
+        row-gap:10px;
+        height: 700px;
+    }
+    .cont-cajas>img,.caja{
+        height: 100%;
+        width:100%;
     }
     .caja{
+        min-height: 300px;
         min-width: 100px;
-        width: 30%;
     }
 
 }
@@ -383,15 +403,20 @@ main{
         align-items: center;
         gap: 20px;
     }
-    .main-juguemos{
-        padding-top: 20px;
+   .main-juguemos{
+        padding: 20px 0px;
     }
     .cont-cajas{
-        height: 200px;
+        height: 400px;
+        padding-bottom: 10px;
+    }
+    .caja{
+        min-height: 150px;
+        min-width: 50px;
     }
     #boton-reiniciar{
         margin-top: 5px;
-        width: 150px;
+        width: 180px;
     }
 }
 @media(max-width:340px){
@@ -412,12 +437,16 @@ main{
         padding-top: 20px;
     }
     .cont-cajas{
-        height: 150px;
+        height: 350px;
         padding-bottom: 10px;
+    }
+    .caja{
+        min-height: 150px;
+        min-width: 100px;
     }
     #boton-reiniciar{
         margin-top: 5px;
-        width: 100px;
+        width: 80px;
         
     }
 }
